@@ -80,8 +80,8 @@ function _cjEventListener()
 function _cjEventHandler(data)
 {
     // Debugging
-    console.log("Received data from php: ");
-    console.log(data);
+    //console.log("Received data from php: ");
+    //console.log(data);
     if (data) {
         if (typeof(jQuery) !== 'undefined') {
             for (i=0; i<data.length; i++){
@@ -89,7 +89,8 @@ function _cjEventHandler(data)
             }
         } else if (typeof(Prototype) !== 'undefined') {
             for (i=0; i<data.length; i++) {
-                Event.fire(document, 'document:'+data[i][0], data[i]);
+                // console.log('Firing: '+'phpevent:'+data[i][0]);
+                Event.fire($(document.body), 'phpevent:'+data[i][0], data[i]);
             }
         } else {
             alert('You need JQuery or Prototype to use this library!');

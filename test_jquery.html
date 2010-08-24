@@ -39,7 +39,10 @@
             $(document).ready(function () {
                 $(document.body).bind('jsevent1', callback1);
                 $(document.body).bind('jsevent2', callback2);
-                listenForPHPEvents();
+
+                // Enable if you want to poll for events from the backend (useful for chat-apps, automatic loading of more content, ..)
+                // If you know that you'll only get events that are an answer to events you raised in javascript, you don't need to enable this'
+                // listenForPHPEvents();
             });
         </script>
     </head>
@@ -51,7 +54,7 @@
           and you will see the answer appearing next to the button you clicked.
       </div><br/>
       
-      <input type="button" value="Raise jsevent1" onclick="raisePHPEvent('phpevent1', 'arg1-1', 'arg1-2');" /> <span id="event1answer"></span><br/>
-      <input type="button" value="Raise jsevent2" onclick="raisePHPEvent('phpevent2', 'arg2-1', 'arg2-2')" /> <span id="event2answer"></span>
+      <input type="button" value="Raise phpevent1" onclick="raisePHPEvent('phpevent1', 'arg1-1', 'arg1-2');" /> <span id="event1answer"></span><br/>
+      <input type="button" value="Raise phpevent2" onclick="raisePHPEvent('phpevent2', 'arg2-1', 'arg2-2')" /> <span id="event2answer"></span>
   </body>
 </html>

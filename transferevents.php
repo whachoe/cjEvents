@@ -1,10 +1,10 @@
 <?php
     include_once 'event.php';
-    include_once 'mycallbacks.php'; // the callbacks that are gonna used to handle the events
+    include_once 'mycallbacks.php'; // the callbacks that are gonna be used to handle the events
 
     session_start();
 
-    $handler = cjEventHandler::singleton(false);
+    $handler = cjEventHandler::singleton();
 
     
     
