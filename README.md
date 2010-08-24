@@ -38,7 +38,7 @@ raisePHPEvent('some event', 'arg1', 'arg2', 'arg3');
 
 The correct callback for this event would be something like this:
 
-<?php
+    <?php
     $handler = cjEventHandler::singleton();
     $handler->attach('some event', 'get_vars_from_js');
 
@@ -50,7 +50,7 @@ The correct callback for this event would be something like this:
         echo $params[3]; // 'arg3'
         echo $params[4]; // '' because it does not exist
     }
-?>
+    ?>
 
 
 Jo Giraerts <jo.giraerts@gmail.com>
