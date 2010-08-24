@@ -4,10 +4,13 @@ cjEvents
 With this library you can do event-based programming in PHP and Javascript.
 The base-class is cjEventHandler in event.php. This class implements a singleton observer pattern.
 
-*Primary methods:*
+####Primary methods:
 - $handler->singleton($handle_directly): get an instance of this class. The parameter is a boolean which determines if events should be handled immediately after they are raised or if you want to call the handle()-method yourself.
+
 - $handler->attach: Link a callback-function or method to a self-named event.
+
 - $handler->raise : Raise an event. If you set $handle_directly to 'true' when instantiating this object, it will also be handled. This function accepts unlimited amount of parameters which will be given to the callback in 1 array.
+
 - $handler->handle: Handle all the raised events. Calls all the callbacks you defined.
 
 For some examples on how you can use this class, check test_purephp.php.
