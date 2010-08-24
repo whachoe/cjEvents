@@ -1,4 +1,4 @@
-cjEvents by Jo Giraerts <jo.giraerts@gmail.com>
+cjEvents
 ========
 
 With this library you can do event-based programming in PHP and Javascript.
@@ -51,3 +51,6 @@ The correct callback for this event would be something like this:
         echo $params[4]; // '' because it does not exist
     }
 ?>
+
+
+Jo Giraerts <jo.giraerts@gmail.com>
