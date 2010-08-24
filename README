@@ -1,0 +1,22 @@
+Caveats:
+
+. When sending events from javascript to PHP, the arguments you send along, will all arrive to the callback in 1 array.
+<script>
+raisePHPEvent('some event', 'arg1', 'arg2', 'arg3');
+</script>
+
+The correct callback for this event would be something like this:
+
+<?php
+    $handler = cjEventHandler::singleton();
+    $handler->attach('some event', 'get_vars_from_js');
+
+    function get_vars_from_js($params)
+    {
+        echo $params[0]; // 'some event'
+        echo $params[1]; // 'arg1'
+        echo $params[2]; // 'arg2'
+        echo $params[3]; // 'arg3'
+        echo $params[4]; // '' because it does not exist
+    }
+?>
