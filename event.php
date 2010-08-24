@@ -14,7 +14,7 @@ class baseEventHandler
     protected $event_callback_matrix;
     protected $handle_directly;
     
-    private function __construct($handle_directly = true)
+    protected function __construct($handle_directly = true)
     {
         $this->handle_directly = $handle_directly;
         $this->events = array();
