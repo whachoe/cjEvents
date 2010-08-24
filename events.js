@@ -44,6 +44,7 @@ function raisePHPEvent(eventname)
  */
 function listenForPHPEvents()
 {
+    /* disable this stuff until i find time to integrate websockets
     // Use WebSockets if available
     if ("WebSocket" in window) {
         socket = new WebSocket(websockethost);
@@ -54,6 +55,10 @@ function listenForPHPEvents()
         clearInterval(_listenerinterval);
         _listenerinterval = setInterval("_cjEventListener()", listener_interval_ms);
     }
+    */
+
+    clearInterval(_listenerinterval);
+    _listenerinterval = setInterval("_cjEventListener()", listener_interval_ms);
 }
 
 /**
@@ -89,7 +94,6 @@ function _cjEventHandler(data)
             }
         } else if (typeof(Prototype) !== 'undefined') {
             for (i=0; i<data.length; i++) {
-                // console.log('Firing: '+'phpevent:'+data[i][0]);
                 Event.fire($(document.body), 'phpevent:'+data[i][0], data[i]);
             }
         } else {
